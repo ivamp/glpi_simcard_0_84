@@ -133,7 +133,7 @@ class PluginSimcardSimcard_Item extends CommonDBRelation{
       echo "<div class='spaced'>";
       echo "<form id='items' name='items' method='post' action='".Toolbox::getItemTypeFormURL(__CLASS__)."'>";
       echo "<table class='tab_cadre_fixehov'>";
-      echo "<tr><th colspan='6'>".$LANG['document'][19]."</th></tr>";
+      echo "<tr><th colspan='6'>".__("Associated item")."</th></tr>";
       if (!empty($results)) {
          echo "<tr><th></th>";
          echo "<th>".$LANG['common'][17]."</th>";
@@ -177,7 +177,7 @@ class PluginSimcardSimcard_Item extends CommonDBRelation{
             Dropdown::showAllItems("items_id",0,0,$simcard->fields['entities_id'], self::getClasses());
             echo "</td>";
             echo "<td colspan='2' class='center' class='tab_bg_2'>";
-            echo "<input type='submit' name='additem' value=\"".$LANG['buttons'][8]."\" class='submit'>";
+            echo "<input type='submit' name='additem' value=\""._sx('button', 'Add')."\" class='submit'>";
             echo "</td></tr>";
          }
    
