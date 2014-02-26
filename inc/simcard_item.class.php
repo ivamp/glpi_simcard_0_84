@@ -136,11 +136,11 @@ class PluginSimcardSimcard_Item extends CommonDBRelation{
       echo "<tr><th colspan='6'>".__("Associated item")."</th></tr>";
       if (!empty($results)) {
          echo "<tr><th></th>";
-         echo "<th>".$LANG['common'][17]."</th>";
-         echo "<th>".$LANG['entity'][0]."</th>";
-         echo "<th>".$LANG['common'][16]."</th>";
-         echo "<th>".$LANG['common'][19]."</th>";
-         echo "<th>".$LANG['common'][20]."</th>";
+         echo "<th>".__("Type")."</th>";
+         echo "<th>".__("Entity")."</th>";
+         echo "<th>".__("Name")."</th>";
+         echo "<th>".__("Serial Number")."</th>";
+         echo "<th>".__("Inventory Number")."</th>";
          echo "</tr>";
          foreach ($results as $data) {
             $item = new $data['itemtype'];
@@ -183,7 +183,7 @@ class PluginSimcardSimcard_Item extends CommonDBRelation{
    
          if (!empty($results)) {
             Html::openArrowMassives('items');
-            Html::closeArrowMassives(array('delete_items' => $LANG['buttons'][10]));
+            Html::closeArrowMassives(array('delete_items' => _sx('button', 'Disconnect')));
          }
       }
       echo "</table>" ;

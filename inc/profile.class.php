@@ -109,7 +109,7 @@ class PluginSimcardProfile extends CommonDBTM {
       echo "</tr>";
 
       echo "<tr class='tab_bg_2'>";
-      echo "<td>" . __("Linkable items to a ticket") . " - " . $LANG['plugin_simcard']['profile'][1] . ":</td><td>";
+      echo "<td>" . __("Associable items to a ticket") . " - " . $LANG['plugin_simcard']['profile'][1] . ":</td><td>";
       if ($prof->fields['create_ticket']) {
          Dropdown::showYesNo("open_ticket" , $this->fields["open_ticket"]);
       } else {
