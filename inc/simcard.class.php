@@ -79,7 +79,7 @@ class PluginSimcardSimcard extends CommonDBTM {
             $this->addStandardTab('Event',$ong,$options);
          }
       } else {
-         $ong[1] = $LANG['title'][26];
+         $ong[1] = __('Main');
       }
 
       return $ong;
@@ -344,7 +344,6 @@ Document_Item::cloneItem($this->getType(), $this->input["_oldID"], $this->fields
 
       $tab[1]['table']           = $this->getTable();
       $tab[1]['field']           = 'name';
-    //  $tab[1]['name']            = $LANG['common'][16];
       $tab[1]['name']            = __('Name');
       $tab[1]['datatype']        = 'itemlink';
       $tab[1]['itemlink_type']   = $this->getType();
