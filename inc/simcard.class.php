@@ -121,7 +121,7 @@ class PluginSimcardSimcard extends CommonDBTM {
 
       if (isset($options['itemtype']) && isset($options['items_id'])) {
          echo "<tr class='tab_bg_1'>";
-         echo "<td>".$LANG['document'][14]."</td>";
+         echo "<td>".__('Associated element')."</td>";
          echo "<td>";
          $item = new $options['itemtype'];
          $item->getFromDB($options['items_id']);

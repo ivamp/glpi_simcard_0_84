@@ -137,7 +137,7 @@ function plugin_simcard_getAddSearchOptions($itemtype) {
       if (Session::haveRight("simcard","r")) {
          $sopt[1710]['table']         = 'glpi_plugin_simcard_simcards';
          $sopt[1710]['field']         = 'name';
-         $sopt[1710]['name']          = $LANG['plugin_simcard']['profile'][1]." - ".$LANG['common'][16];
+         $sopt[1710]['name']          = $LANG['plugin_simcard']['profile'][1]." - ".__s('Name');
          $sopt[1710]['forcegroupby']  = true;
          $sopt[1710]['massiveaction'] = false;
          $sopt[1710]['datatype']      = 'itemlink';
