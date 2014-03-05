@@ -161,6 +161,7 @@ class PluginSimcardSimcard extends CommonDBTM {
       echo "</td></tr>\n";
 
       echo "<tr class='tab_bg_1'>";
+      // TODO: Needs localization
       echo "<td>".('Responsable Technique')."</td>";
       echo "<td>";
       User::dropdown(array('name'   => 'users_id_tech',
@@ -186,6 +187,7 @@ class PluginSimcardSimcard extends CommonDBTM {
    
       
       echo "<tr class='tab_bg_1'>";
+      // TODO: Needs localization
       echo "<td>".('Utilisateur')."</td>";
       echo "<td>";
       User::dropdown(array('value'  => $this->fields["users_id"],
@@ -221,6 +223,7 @@ class PluginSimcardSimcard extends CommonDBTM {
       echo "</td></tr>\n";
       
       echo "<tr class='tab_bg_1'>";
+      // TODO : Needs localization
       echo "<td>".("Numéro d'inventaire").
                           (isset($options['withtemplate']) && $options['withtemplate']?"*":"").
            "</td>";
@@ -596,23 +599,23 @@ Document_Item::cloneItem($this->getType(), $this->input["_oldID"], $this->fields
 
  static function displayTabContentForItem(CommonGLPI $item, $tabnum=1, $withtemplate=0) {
       
-  //    switch (get_class($item)) {
-    //     case 'Profile':
-      //      $profile      = new PluginSimcardProfile();
-        //    if (!$profile->getFromDBByProfile($item->getField('id'))) {
-          //     $profile->createAccess($item->getField('id'));
-            //}
-        //$profile->showForm($item->getField('id'));
-         //break;
-         //default:
-           // PluginSimcardSimcard_Item::showForItem($item);
-            //break;
-      		$self=new self();
-		if($item->getType()=='PluginSimcardSimcard') {
-		 $self->showtotal($item->getField('id'));
+//       switch (get_class($item)) {
+//          case 'Profile':
+//             $profile      = new PluginSimcardProfile();
+//             if (!$profile->getFromDBByProfile($item->getField('id'))) {
+//                $profile->createAccess($item->getField('id'));
+//             }
+//             $profile->showForm($item->getField('id'));
+//             break;
+//          default:
+//             PluginSimcardSimcard_Item::showForItem($item);
+//             break;
+    $self=new self();
+    if($item->getType()=='PluginSimcardSimcard') {
+	   $self->showtotal($item->getField('id'));
 	}
-      return true;
-   }
+    return true;
+ }
 
   /**
     * Type than could be linked to a Rack

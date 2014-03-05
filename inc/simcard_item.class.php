@@ -208,13 +208,13 @@ class PluginSimcardSimcard_Item extends CommonDBRelation{
       echo "<div class='spaced'>";
       echo "<form id='items' name='items' method='post' action='".Toolbox::getItemTypeFormURL(__CLASS__)."'>";
       echo "<table class='tab_cadre_fixehov'>";
-      echo "<tr><th colspan='6'>".$LANG['document'][19]."</th></tr>";
+      echo "<tr><th colspan='6'>".__s('Associated item')."</th></tr>";
       if (!empty($results)) {
          echo "<tr><th></th>";
-         echo "<th>".$LANG['entity'][0]."</th>";
-         echo "<th>".$LANG['common'][16]."</th>";
-         echo "<th>".$LANG['common'][19]."</th>";
-         echo "<th>".$LANG['common'][20]."</th>";
+         echo "<th>".__s('Entity')."</th>";
+         echo "<th>".__s('Name')."</th>";
+         echo "<th>".__s('Serial Number')."</th>";
+         echo "<th>".__s('Inventory number')."</th>";
          echo "</tr>";
          foreach ($results as $data) {
             $tmp = new PluginSimcardSimcard();
@@ -259,12 +259,12 @@ class PluginSimcardSimcard_Item extends CommonDBRelation{
                                'entity' => $item->fields['entities_id'], 'used' => $used));
          echo "</td>";
          echo "<td colspan='2' class='center' class='tab_bg_2'>";
-         echo "<input type='submit' name='additem' value=\"".$LANG['buttons'][8]."\" class='submit'>";
+         echo "<input type='submit' name='additem' value=\""._sx('button', 'Save')."\" class='submit'>";
          echo "</td></tr>";
          
          if (!empty($results)) {
             Html::openArrowMassives('items');
-            Html::closeArrowMassives(array ('delete_items' => $LANG['buttons'][10]));
+            Html::closeArrowMassives(array ('delete_items' => _sx('button', 'Disconnect')));
          }
       }
       echo "</table>" ;
@@ -273,9 +273,10 @@ class PluginSimcardSimcard_Item extends CommonDBRelation{
    }
 
    function getTabNameForItem(CommonGLPI $item, $withtemplate=0) {
-
+      global $LANG;
+      
       if (in_array(get_class($item), PluginSimcardSimcard_Item::getClasses())) {
-        // return array(1 =>$LANG ['plugin_simcard']['profile'][1]);
+         return array(1 => $LANG['plugin_simcard']['profile'][1]);
       } elseif (get_class($item) == 'PluginSimcardSimcard') {
          return _n('Associated item','Associated items',2);
          return _n('connect');
