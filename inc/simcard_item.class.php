@@ -50,7 +50,7 @@ class PluginSimcardSimcard_Item extends CommonDBRelation{
    **/
    static function getTypeName($nb=0) {
       global $LANG;
-      return $LANG['connect'][0];
+      return __s('Direct Connections');
    }
    
    /**
