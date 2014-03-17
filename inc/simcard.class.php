@@ -59,7 +59,7 @@ class PluginSimcardSimcard extends CommonDBTM {
       return Session::haveRight('simcard', 'r');
    }
 
-     function defineTabs($options=array()) {
+   function defineTabs($options=array()) {
       global $LANG;
       $ong     = array();
       if ($this->fields['id'] > 0) {
@@ -69,7 +69,9 @@ class PluginSimcardSimcard extends CommonDBTM {
             $this->addStandardTab('Document',$ong,$options);
             $this->addStandardTab('Infocom',$ong,$options);
             $this->addStandardTab('Contract_Item', $ong, $options);
-            $this->addStandardTab('Ticket',$ong,$options);
+            if ($this->fields['is_helpdesk_visible'] == 1) {
+               $this->addStandardTab('Ticket',$ong,$options);
+            }
             $this->addStandardTab('Note',$ong,$options);
             $this->addStandardTab('Log',$ong,$options);
             $this->addStandardTab('Event',$ong,$options);
@@ -134,7 +136,7 @@ class PluginSimcardSimcard extends CommonDBTM {
       
       
       echo "<tr class='tab_bg_1'>";
-      echo "<td>".__('Nom').
+      echo "<td>".__('Name').
                           (isset($options['withtemplate']) && $options['withtemplate']?"*":"").
            "</td>";
       echo "<td>";
@@ -143,13 +145,13 @@ class PluginSimcardSimcard extends CommonDBTM {
                              $this->getType(), $this->fields["entities_id"]);
       Html::autocompletionTextField($this, 'name', array('value' => $objectName));
       echo "</td>";
-      echo "<td>".__('statut')."</td>";
+      echo "<td>".__('Status')."</td>";
       echo "<td>";
       Dropdown::show('State', array('value' => $this->fields["states_id"]));
       echo "</td></tr>\n";
 
       echo "<tr class='tab_bg_1'>";
-      echo "<td>".('Lieu')."</td>";
+      echo "<td>".__('Location')."</td>";
       echo "<td>";
       Dropdown::show('Location', array('value'  => $this->fields["locations_id"],
                                        'entity' => $this->fields["entities_id"]));
@@ -161,8 +163,7 @@ class PluginSimcardSimcard extends CommonDBTM {
       echo "</td></tr>\n";
 
       echo "<tr class='tab_bg_1'>";
-      // TODO: Needs localization
-      echo "<td>".('Responsable Technique')."</td>";
+      echo "<td>".__('Technician in charge of the hardware')."</td>";
       echo "<td>";
       User::dropdown(array('name'   => 'users_id_tech',
                            'value'  => $this->fields["users_id_tech"],
@@ -174,6 +175,17 @@ class PluginSimcardSimcard extends CommonDBTM {
       Dropdown::show('PluginSimcardSimcardVoltage',
                      array('value' => $this->fields["plugin_simcard_simcardvoltages_id"]));
       echo "</td></tr>\n";
+
+//       TODO : Add group in charge of hardware      
+//       echo "<tr class='tab_bg_1'>";
+//       echo "<td>".__('Group in charge of the hardware')."</td>";
+//       echo "<td>";
+//       Group::dropdown(array('name'      => 'groups_id_tech',
+//       'value'     => $this->fields['groups_id_tech'],
+//       'entity'    => $this->fields['entities_id'],
+//       'condition' => '`is_assign`'));
+//       echo "</td>";
+//       echo "</td></tr>\n";
       
       echo "<tr class='tab_bg_1'>";
       echo "<td>".$LANG['plugin_simcard'][7]."</td>";
@@ -181,14 +193,15 @@ class PluginSimcardSimcard extends CommonDBTM {
       Dropdown::show('PluginSimcardPhoneOperator',
                      array('value' => $this->fields["plugin_simcard_phoneoperators_id"]));
       echo "</td>";
-      echo "<td>" . ('Associable à un ticket') . "&nbsp;:</td><td>";
+
+      echo "<td>" . __('Associable items to a ticket') . "&nbsp;:</td><td>";
       Dropdown::showYesNo('is_helpdesk_visible',$this->fields['is_helpdesk_visible']);
       echo "</td></tr>\n";
    
       
       echo "<tr class='tab_bg_1'>";
       // TODO: Needs localization
-      echo "<td>".('Utilisateur')."</td>";
+      echo "<td>".__('User')."</td>";
       echo "<td>";
       User::dropdown(array('value'  => $this->fields["users_id"],
                            'entity' => $this->fields["entities_id"],
@@ -199,13 +212,13 @@ class PluginSimcardSimcard extends CommonDBTM {
       
       echo "<td></td></tr>\n";
       echo "<tr class='tab_bg_1'>";
-      echo "<td>".('Groupe')."</td>";
+      echo "<td>".__('Group')."</td>";
       echo "<td>";
       Dropdown::show('Group', array('value'     => $this->fields["groups_id"],
                                     'entity'    => $this->fields["entities_id"]));
 
       echo "</td>";
-      echo "<td rowspan='7'>".('common')."</td>";
+      echo "<td rowspan='7'>".__('Comments')."</td>";
       echo "<td rowspan='7' class='middle'>";
       echo "<textarea cols='45' rows='15' name='comment' >".$this->fields["comment"]."</textarea>";
       echo "</td></tr>\n";
@@ -224,7 +237,7 @@ class PluginSimcardSimcard extends CommonDBTM {
       
       echo "<tr class='tab_bg_1'>";
       // TODO : Needs localization
-      echo "<td>".("Numéro d'inventaire").
+      echo "<td>".__("Inventory number").
                           (isset($options['withtemplate']) && $options['withtemplate']?"*":"").
            "</td>";
       echo "<td>";
