@@ -517,7 +517,7 @@ Document_Item::cloneItem($this->getType(), $this->input["_oldID"], $this->fields
       return $tab;
    }
    
-  function install(Migration $migration) {
+  static function install(Migration $migration) {
       global $DB;
       $table = getTableForItemType(__CLASS__);
       if (!TableExists($table)) {
@@ -575,7 +575,7 @@ Document_Item::cloneItem($this->getType(), $this->input["_oldID"], $this->fields
       }
    }
    
-    function uninstall() {
+   static function uninstall() {
       global $DB;
 
       foreach (array('DisplayPreference', 'Document_Item', 'Bookmark', 'Log') as $itemtype) {
