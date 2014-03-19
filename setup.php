@@ -28,6 +28,7 @@
  @since     2009
  ---------------------------------------------------------------------- */
 
+define ("PLUGIN_SIMCARD_VERSION", "0.84+1.3");
 // Init the hooks of the plugins -Needed
 function plugin_init_simcard() {
    global $PLUGIN_HOOKS,$CFG_GLPI,$LANG;
@@ -112,7 +113,7 @@ function plugin_version_simcard() {
    $author.= "<img src='".GLPI_ROOT."/plugins/simcard/pics/favicon.ico'></a>";
    $author.= ", <a href='www.teclib.com'>Walid Nouh</a>";
    return array ('name'           => $LANG['plugin_simcard']['title'][1],
-                   'version'        => '0.84',
+                   'version'        => PLUGIN_SIMCARD_VERSION,
                    'author'         => $author,
                    'homepage'       => 'https://forge.indepnet.net/projects/show/simcard',
                    'minGlpiVersion' => '0.84');
