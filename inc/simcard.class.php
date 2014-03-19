@@ -209,7 +209,15 @@ class PluginSimcardSimcard extends CommonDBTM {
 
       echo "<input type='hidden' name='is_global' value='1'>";
       
-      echo "<td></td></tr>\n";
+      echo "<td>".__("Inventory number").
+                          (isset($options['withtemplate']) && $options['withtemplate']?"*":"").
+           "</td>";
+      echo "<td>";
+      $objectName = autoName($this->fields["otherserial"], "otherserial",
+                             (isset($options['withtemplate']) && $options['withtemplate']==2),
+                             $this->getType(), $this->fields["entities_id"]);
+      Html::autocompletionTextField($this, 'otherserial', array('value' => $objectName));
+      echo "</td></tr>\n";
       echo "<tr class='tab_bg_1'>";
       echo "<td>".__('Group')."</td>";
       echo "<td>";
@@ -234,16 +242,16 @@ class PluginSimcardSimcard extends CommonDBTM {
       Html::autocompletionTextField($this,'serial');
       echo "</td></tr>\n";
       
-      echo "<tr class='tab_bg_1'>";
-      echo "<td>".__("Inventory number").
-                          (isset($options['withtemplate']) && $options['withtemplate']?"*":"").
-           "</td>";
-      echo "<td>";
-      $objectName = autoName($this->fields["otherserial"], "otherserial",
-                             (isset($options['withtemplate']) && $options['withtemplate']==2),
-                             $this->getType(), $this->fields["entities_id"]);
-      Html::autocompletionTextField($this, 'otherserial', array('value' => $objectName));
-      echo "</td></tr>\n";
+//       echo "<tr class='tab_bg_1'>";
+//       echo "<td>".__("Inventory number").
+//                           (isset($options['withtemplate']) && $options['withtemplate']?"*":"").
+//            "</td>";
+//       echo "<td>";
+//       $objectName = autoName($this->fields["otherserial"], "otherserial",
+//                              (isset($options['withtemplate']) && $options['withtemplate']==2),
+//                              $this->getType(), $this->fields["entities_id"]);
+//       Html::autocompletionTextField($this, 'otherserial', array('value' => $objectName));
+//       echo "</td></tr>\n";
       
       //Only show PIN and PUK code to users who can write (theses informations are highly sensible)
       if (Session::haveRight('simcard', 'w')) {
