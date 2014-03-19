@@ -235,7 +235,6 @@ class PluginSimcardSimcard extends CommonDBTM {
       echo "</td></tr>\n";
       
       echo "<tr class='tab_bg_1'>";
-      // TODO : Needs localization
       echo "<td>".__("Inventory number").
                           (isset($options['withtemplate']) && $options['withtemplate']?"*":"").
            "</td>";
