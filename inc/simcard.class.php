@@ -200,7 +200,6 @@ class PluginSimcardSimcard extends CommonDBTM {
    
       
       echo "<tr class='tab_bg_1'>";
-      // TODO: Needs localization
       echo "<td>".__('User')."</td>";
       echo "<td>";
       User::dropdown(array('value'  => $this->fields["users_id"],
