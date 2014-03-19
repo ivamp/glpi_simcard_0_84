@@ -43,6 +43,7 @@ class PluginSimcardSimcardVoltage extends CommonDropdown {
 
    static function install(Migration $migration) {
       global $DB;
+      
       $table = getTableForItemType(__CLASS__);
       if (!TableExists($table)) {
          $query = "CREATE TABLE IF NOT EXISTS `$table` (
@@ -59,6 +60,16 @@ class PluginSimcardSimcardVoltage extends CommonDropdown {
                      (2, '5V', '');";
          $DB->query($query) or die("Error adding simcard voltages");
       }
+   }
+   
+   /**
+    * 
+    *
+    * @since 0.84+1.3
+    **/
+   static function upgrade(Migration $migration) {
+      global $DB;
+
    }
    
    static function uninstall() {

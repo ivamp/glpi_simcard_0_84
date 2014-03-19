@@ -156,10 +156,10 @@ class PluginSimcardSimcard extends CommonDBTM {
       Dropdown::show('Location', array('value'  => $this->fields["locations_id"],
                                        'entity' => $this->fields["entities_id"]));
       echo "</td>";
-      echo "<td>".$LANG['plugin_simcard'][6]."</td>";
+      echo "<td>".$LANG['plugin_simcard'][11]."</td>";
       echo "<td>";
-      Dropdown::show('PluginSimcardSimcardSize',
-                     array('value' => $this->fields["plugin_simcard_simcardsizes_id"]));
+      Dropdown::show('PluginSimcardSimcardType',
+                     array('value' => $this->fields["plugin_simcard_simcardtypes_id"]));
       echo "</td></tr>\n";
 
       echo "<tr class='tab_bg_1'>";
@@ -170,22 +170,27 @@ class PluginSimcardSimcard extends CommonDBTM {
                            'right'  => 'interface',
                            'entity' => $this->fields["entities_id"]));
       echo "</td>";
+      echo "<td>".$LANG['plugin_simcard'][6]."</td>";
+      echo "<td>";
+      Dropdown::show('PluginSimcardSimcardSize',
+                     array('value' => $this->fields["plugin_simcard_simcardsizes_id"]));
+      echo "</td></tr>\n";
+
+//       TODO : Add group in charge of hardware      
+      echo "<tr class='tab_bg_1'>";
+      echo "<td>".__('Group in charge of the hardware')."</td>";
+      echo "<td>";
+      Group::dropdown(array('name'      => 'groups_id_tech',
+      'value'     => $this->fields['groups_id_tech'],
+      'entity'    => $this->fields['entities_id'],
+      'condition' => '`is_assign`'));
+      echo "</td>";
+      
       echo "<td>".$LANG['plugin_simcard'][9]."</td>";
       echo "<td>";
       Dropdown::show('PluginSimcardSimcardVoltage',
                      array('value' => $this->fields["plugin_simcard_simcardvoltages_id"]));
       echo "</td></tr>\n";
-
-//       TODO : Add group in charge of hardware      
-//       echo "<tr class='tab_bg_1'>";
-//       echo "<td>".__('Group in charge of the hardware')."</td>";
-//       echo "<td>";
-//       Group::dropdown(array('name'      => 'groups_id_tech',
-//       'value'     => $this->fields['groups_id_tech'],
-//       'entity'    => $this->fields['entities_id'],
-//       'condition' => '`is_assign`'));
-//       echo "</td>";
-//       echo "</td></tr>\n";
       
       echo "<tr class='tab_bg_1'>";
       echo "<td>".$LANG['plugin_simcard'][7]."</td>";
@@ -224,16 +229,16 @@ class PluginSimcardSimcard extends CommonDBTM {
       Dropdown::show('Group', array('value'     => $this->fields["groups_id"],
                                     'entity'    => $this->fields["entities_id"]));
 
-      echo "</td>";
-      echo "<td rowspan='7'>".__('Comments')."</td>";
-      echo "<td rowspan='7' class='middle'>";
-      echo "<textarea cols='45' rows='15' name='comment' >".$this->fields["comment"]."</textarea>";
       echo "</td></tr>\n";
       
       echo "<tr class='tab_bg_1'>";
       echo "<td>".$LANG['plugin_simcard'][1]."</td>";
       echo "<td>";
       Html::autocompletionTextField($this,'phonenumber');
+      echo "</td>";
+      echo "<td rowspan='6'>".__('Comments')."</td>";
+      echo "<td rowspan='6' class='middle'>";
+      echo "<textarea cols='45' rows='15' name='comment' >".$this->fields["comment"]."</textarea>";
       echo "</td></tr>\n";
 
       echo "<tr class='tab_bg_1'>";
@@ -543,10 +548,12 @@ Document_Item::cloneItem($this->getType(), $this->input["_oldID"], $this->fields
               `users_id` int(11) NOT NULL DEFAULT '0',
               `users_id_tech` int(11) NOT NULL DEFAULT '0',
               `groups_id` int(11) NOT NULL DEFAULT '0',
+              `groups_id_tech` int(11) NOT NULL DEFAULT '0',
               `plugin_simcard_phoneoperators_id` int(11) NOT NULL DEFAULT '0',
               `manufacturers_id` int(11) NOT NULL DEFAULT '0',
               `plugin_simcard_simcardsizes_id` int(11) NOT NULL DEFAULT '0',
               `plugin_simcard_simcardvoltages_id` int(11) NOT NULL DEFAULT '0',
+              `plugin_simcard_simcardtypes_id` int(11) NOT NULL DEFAULT '0',
               `comment` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
               `date_mod` datetime DEFAULT NULL,
               `is_template` tinyint(1) NOT NULL DEFAULT '0',
@@ -578,6 +585,21 @@ Document_Item::cloneItem($this->getType(), $this->input["_oldID"], $this->fields
               KEY `is_global` (`is_global`)
             ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;";
          $DB->query($query) or die("Error adding table $table");
+      }
+   }
+   
+   static function upgrade(Migration $migration) {
+      global $DB;
+      
+      switch (plugin_simcard_currentVersion()) {
+      	 case '1.2':
+      	    $sql = "ALTER TABLE `glpi_plugin_simcard_simcards`
+                    ADD `plugin_simcard_simcardtypes_id` int(11) NOT NULL DEFAULT '0' AFTER `plugin_simcard_simcardvoltages_id`,
+      	            ADD `groups_id_tech` int(11) NOT NULL DEFAULT '0' AFTER `groups_id`";
+      	     
+      	    $DB->query($sql) or die($DB->error());
+      	    break;
+      	    
       }
    }
    

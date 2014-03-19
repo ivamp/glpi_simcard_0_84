@@ -115,6 +115,7 @@ function plugin_version_simcard() {
    return array ('name'           => $LANG['plugin_simcard']['title'][1],
                    'version'        => PLUGIN_SIMCARD_VERSION,
                    'author'         => $author,
+                   'license'        => 'GPLv2+',
                    'homepage'       => 'https://forge.indepnet.net/projects/show/simcard',
                    'minGlpiVersion' => '0.84');
 }
