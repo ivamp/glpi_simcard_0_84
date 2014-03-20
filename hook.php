@@ -141,7 +141,9 @@ function plugin_simcard_getDatabaseRelations() {
                   "glpi_plugin_simcard_simcardtypes"
                      => array("glpi_plugin_simcard_simcards"=>"plugin_simcard_simcardtypes_id"),
                   "glpi_users" => array("glpi_plugin_simcard_simcards"=>"users_id"),
+                  "glpi_users" => array("glpi_plugin_simcard_simcards"=>"users_id_tech"),
                   "glpi_groups" => array("glpi_plugin_simcard_simcards"=>"groups_id"),
+                  "glpi_groups" => array("glpi_plugin_simcard_simcards"=>"groups_id_tech"),
                   "glpi_manufacturers" => array("glpi_plugin_simcard_simcards" => "manufacturers_id"),
                   "glpi_states" => array("glpi_plugin_simcard_simcards" => "states_id"),
                   "glpi_locations" => array("glpi_plugin_simcard_simcards"=>"locations_id"),
