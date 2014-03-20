@@ -136,16 +136,16 @@ function plugin_simcard_getDatabaseRelations() {
                      => array("glpi_plugin_simcard_simcards"=>"plugin_simcard_simcardsizes_id"),
                   "glpi_plugin_simcard_simcardvoltages"
                      => array("glpi_plugin_simcard_simcards"=>"plugin_simcard_simcardvoltages_id"),
-                     "glpi_plugin_simcard_phoneoperators"
+                  "glpi_plugin_simcard_phoneoperators"
                      => array("glpi_plugin_simcard_simcards"=>"plugin_simcard_phoneoperators_id"),
-                     "glpi_plugin_simcard_type"
-                     => array("glpi_plugin_simcard_simcards"=>"plugin_simcard_types_id"),
-                    "glpi_users" => array("glpi_plugin_simcard_simcards"=>"users_id"),
-                   "glpi_groups" => array("glpi_plugin_simcard_simcards"=>"groups_id"),
-                   "glpi_manufacturers" => array("glpi_plugin_simcard_simcards" => "manufacturers_id"),
-                   "glpi_states" => array("glpi_plugin_simcard_simcards" => "states_id"),
-                   "glpi_locations" => array("glpi_plugin_simcard_simcards"=>"locations_id"),
-                   "glpi_profiles" => array ("glpi_plugin_simcard_profiles" => "profiles_id"));
+                  "glpi_plugin_simcard_simcardtypes"
+                     => array("glpi_plugin_simcard_simcards"=>"plugin_simcard_simcardtypes_id"),
+                  "glpi_users" => array("glpi_plugin_simcard_simcards"=>"users_id"),
+                  "glpi_groups" => array("glpi_plugin_simcard_simcards"=>"groups_id"),
+                  "glpi_manufacturers" => array("glpi_plugin_simcard_simcards" => "manufacturers_id"),
+                  "glpi_states" => array("glpi_plugin_simcard_simcards" => "states_id"),
+                  "glpi_locations" => array("glpi_plugin_simcard_simcards"=>"locations_id"),
+                  "glpi_profiles" => array ("glpi_plugin_simcard_profiles" => "profiles_id"));
    } else {
       return array();
    }
