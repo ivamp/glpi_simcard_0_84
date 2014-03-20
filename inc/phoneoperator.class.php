@@ -42,6 +42,7 @@ class PluginSimcardPhoneOperator extends CommonDropdown {
 
    static function install(Migration $migration) {
       global $DB;
+      
       $table = getTableForItemType(__CLASS__);
       if (!TableExists($table)) {
          $query = "CREATE TABLE IF NOT EXISTS `$table` (
