@@ -411,7 +411,7 @@ Document_Item::cloneItem($this->getType(), $this->input["_oldID"], $this->fields
 
       $tab[19]['table']          = $this->getTable();
       $tab[19]['field']          = 'date_mod';
-      $tab[19]['name']           = __('login');
+      $tab[19]['name']           = __('Last update');
       $tab[19]['datatype']       = 'datetime';
       $tab[19]['massiveaction']  = false;
       $tab[19]['injectable']      = false;
@@ -419,7 +419,7 @@ Document_Item::cloneItem($this->getType(), $this->input["_oldID"], $this->fields
       $tab[24]['table']          = 'glpi_users';
       $tab[24]['field']          = 'name';
       $tab[24]['linkfield']      = 'users_id_tech';
-      $tab[24]['name']           = __('common');
+      $tab[24]['name']           = __('Technician in charge of the hardware');
       $tab[24]['checktype']      = 'text';
       $tab[24]['displaytype']    = 'user';
       $tab[24]['injectable']      = true;
@@ -492,14 +492,14 @@ Document_Item::cloneItem($this->getType(), $this->input["_oldID"], $this->fields
       $tab[49]['table']          = 'glpi_groups';
       $tab[49]['field']          = 'name';
       $tab[49]['linkfield']      = 'groups_id';
-      $tab[49]['name']           = __('Group in charge of the hardware');
+      $tab[49]['name']           = __('Group');
       $tab[49]['checktype']       = 'text';
       $tab[49]['displaytype']     = 'dropdown';
       $tab[49]['injectable']      = true;
       
       $tab[70]['table']          = 'glpi_users';
       $tab[70]['field']          = 'name';
-      $tab[70]['name']           = __('Technician in charge of the hardware');
+      $tab[70]['name']           = __('User');
       $tab[70]['checktype']       = 'text';
       $tab[70]['displaytype']     = 'user';
       $tab[70]['injectable']      = true;
