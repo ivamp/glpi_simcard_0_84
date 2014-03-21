@@ -382,6 +382,12 @@ Document_Item::cloneItem($this->getType(), $this->input["_oldID"], $this->fields
       $tab[2]['massiveaction']   = false; // implicit field is id
       $tab[2]['injectable']      = false;
       
+      $tab[4]['table']           = 'glpi_plugin_simcard_simcardtypes';
+      $tab[4]['field']           = 'name';
+      $tab[4]['name']            = __('Type');
+      $tab[4]['datatype']        = 'dropdown';
+      $tab[4]['massiveaction']   = true;
+
       $tab[5]['table']           = $this->getTable();
       $tab[5]['field']           = 'serial';
       $tab[5]['name']            = $LANG['plugin_simcard'][8];
