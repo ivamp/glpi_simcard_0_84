@@ -448,6 +448,7 @@ Document_Item::cloneItem($this->getType(), $this->input["_oldID"], $this->fields
       $tab[26]['table']          = 'glpi_plugin_simcard_phoneoperators';
       $tab[26]['field']          = 'name';
       $tab[26]['name']           = $LANG['plugin_simcard'][7];
+      $tab[26]['datatype']       = 'dropdown';
       $tab[26]['checktype']      = 'text';
       $tab[26]['displaytype']    = 'dropdown';
       $tab[26]['injectable']      = true;
@@ -494,24 +495,27 @@ Document_Item::cloneItem($this->getType(), $this->input["_oldID"], $this->fields
          $tab[32]['injectable']      = true;
       }
 
-      $tab[31]['table']          = 'glpi_states';
-      $tab[31]['field']          = 'name';
-      $tab[31]['name']           = __('Statut');
+      $tab[31]['table']           = 'glpi_states';
+      $tab[31]['field']           = 'name';
+      $tab[31]['name']            = __('Statut');
+      $tab[31]['datatype']        = 'dropdown';
       $tab[31]['checktype']       = 'text';
       $tab[31]['displaytype']     = 'dropdown';
       $tab[31]['injectable']      = true;
       
-      $tab[49]['table']          = 'glpi_groups';
-      $tab[49]['field']          = 'name';
-      $tab[49]['linkfield']      = 'groups_id';
-      $tab[49]['name']           = __('Group');
+      $tab[49]['table']           = 'glpi_groups';
+      $tab[49]['field']           = 'name';
+      $tab[49]['name']            = __('Group');
+      $tab[49]['datatype']        = 'dropdown';
       $tab[49]['checktype']       = 'text';
       $tab[49]['displaytype']     = 'dropdown';
       $tab[49]['injectable']      = true;
       
-      $tab[70]['table']          = 'glpi_users';
-      $tab[70]['field']          = 'name';
-      $tab[70]['name']           = __('User');
+      $tab[70]['table']           = 'glpi_users';
+      $tab[70]['field']           = 'name';
+      $tab[70]['name']            = __('User');
+      $tab[70]['datatype']        = 'dropdown';
+      $tab[70]['right']           = 'all';
       $tab[70]['checktype']       = 'text';
       $tab[70]['displaytype']     = 'user';
       $tab[70]['injectable']      = true;
