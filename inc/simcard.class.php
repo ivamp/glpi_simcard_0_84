@@ -426,22 +426,23 @@ Document_Item::cloneItem($this->getType(), $this->input["_oldID"], $this->fields
       $tab[24]['field']          = 'name';
       $tab[24]['linkfield']      = 'users_id_tech';
       $tab[24]['name']           = __('Technician in charge of the hardware');
+      $tab[24]['datatype']       = 'dropdown';
+      $tab[24]['right']          = 'own_ticket';
       $tab[24]['checktype']      = 'text';
-      $tab[24]['displaytype']    = 'user';
       $tab[24]['injectable']      = true;
 
       $tab[23]['table']          = 'glpi_plugin_simcard_simcardvoltages';
       $tab[23]['field']          = 'name';
       $tab[23]['name']           = $LANG['plugin_simcard'][9];
+      $tab[23]['datatype']       = 'dropdown';
       $tab[23]['checktype']      = 'text';
-      $tab[23]['displaytype']    = 'dropdown';
       $tab[23]['injectable']      = true;
       
       $tab[25]['table']          = 'glpi_plugin_simcard_simcardsizes';
       $tab[25]['field']          = 'name';
       $tab[25]['name']           = $LANG['plugin_simcard'][6];
+      $tab[25]['datatype']       = 'dropdown';
       $tab[25]['checktype']      = 'text';
-      $tab[25]['displaytype']    = 'dropdown';
       $tab[25]['injectable']      = true;
       
       $tab[26]['table']          = 'glpi_plugin_simcard_phoneoperators';
@@ -454,6 +455,7 @@ Document_Item::cloneItem($this->getType(), $this->input["_oldID"], $this->fields
       $tab[27]['table']          = $this->getTable();
       $tab[27]['field']          = 'phonenumber';
       $tab[27]['name']           = $LANG['plugin_simcard'][1];
+      $tab[27]['datatype']        = 'string';
       $tab[27]['checktype']       = 'text';
       $tab[27]['displaytype']     = 'text';
       $tab[27]['injectable']      = true;
@@ -462,6 +464,7 @@ Document_Item::cloneItem($this->getType(), $this->input["_oldID"], $this->fields
          $tab[28]['table']          = $this->getTable();
          $tab[28]['field']          = 'pin';
          $tab[28]['name']           = $LANG['plugin_simcard'][3];
+         $tab[28]['datatype']        = 'string';
          $tab[28]['checktype']       = 'text';
          $tab[28]['displaytype']     = 'text';
          $tab[28]['injectable']      = true;
@@ -469,6 +472,7 @@ Document_Item::cloneItem($this->getType(), $this->input["_oldID"], $this->fields
          $tab[29]['table']          = $this->getTable();
          $tab[29]['field']          = 'puk';
          $tab[29]['name']           = $LANG['plugin_simcard'][4];
+         $tab[29]['datatype']        = 'string';
          $tab[29]['checktype']       = 'text';
          $tab[29]['displaytype']     = 'text';
          $tab[29]['injectable']      = true;
@@ -476,6 +480,7 @@ Document_Item::cloneItem($this->getType(), $this->input["_oldID"], $this->fields
          $tab[30]['table']          = $this->getTable();
          $tab[30]['field']          = 'pin2';
          $tab[30]['name']           = $LANG['plugin_simcard'][5];
+         $tab[30]['datatype']        = 'string';
          $tab[30]['checktype']       = 'text';
          $tab[30]['displaytype']     = 'text';
          $tab[30]['injectable']      = true;
@@ -483,6 +488,7 @@ Document_Item::cloneItem($this->getType(), $this->input["_oldID"], $this->fields
          $tab[32]['table']          = $this->getTable();
          $tab[32]['field']          = 'puk2';
          $tab[32]['name']           = $LANG['plugin_simcard'][2];
+         $tab[32]['datatype']        = 'string';
          $tab[32]['checktype']       = 'text';
          $tab[32]['displaytype']     = 'text';
          $tab[32]['injectable']      = true;
