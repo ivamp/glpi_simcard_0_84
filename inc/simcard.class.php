@@ -400,7 +400,7 @@ Document_Item::cloneItem($this->getType(), $this->input["_oldID"], $this->fields
       
       $tab[16]['table']          = $this->getTable();
       $tab[16]['field']          = 'comment';
-      $tab[16]['name']           = __('common');
+      $tab[16]['name']           = __('Comments');
       $tab[16]['datatype']       = 'text';
       $tab[16]['linkfield']      = 'comment';
       $tab[16]['checktype']      = 'text';
