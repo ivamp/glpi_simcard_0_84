@@ -392,7 +392,7 @@ Document_Item::cloneItem($this->getType(), $this->input["_oldID"], $this->fields
       
       $tab[6]['table']           = $this->getTable();
       $tab[6]['field']           = 'otherserial';
-      $tab[6]['name']            = __('common');
+      $tab[6]['name']            = __('Inventory number');
       $tab[6]['datatype']        = 'string';
       $tab[6]['checktype']       = 'text';
       $tab[6]['displaytype']     = 'text';
