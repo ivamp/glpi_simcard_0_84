@@ -66,7 +66,7 @@ class PluginSimcardSimcard extends CommonDBTM {
          if (!isset($options['withtemplate']) || empty($options['withtemplate'])) {
             $this->addStandardTab('PluginSimcardSimcard_Item', $ong, $options);
             $this->addStandardTab('NetworkPort', $ong, $options);
-            $this->addStandardTab('Document',$ong,$options);
+            $this->addStandardTab('Document_Item',$ong,$options);
             $this->addStandardTab('Infocom',$ong,$options);
             $this->addStandardTab('Contract_Item', $ong, $options);
             if ($this->fields['is_helpdesk_visible'] == 1) {
@@ -76,7 +76,9 @@ class PluginSimcardSimcard extends CommonDBTM {
             $this->addStandardTab('Log',$ong,$options);
             $this->addStandardTab('Event',$ong,$options);
          } else {
-            $this->addStandardTab('Document',$ong,$options);
+            $this->addStandardTab('Infocom',$ong,$options);
+            $this->addStandardTab('Contract_Item', $ong, $options);
+            $this->addStandardTab('Document_Item',$ong,$options);
             $this->addStandardTab('Log',$ong,$options);
             $this->addStandardTab('Event',$ong,$options);
          }
