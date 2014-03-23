@@ -313,9 +313,9 @@ class PluginSimcardSimcard extends CommonDBTM {
          // ADD Infocoms
       //   $ic = new Infocom();
         // $ic->cloneItem($this->getType(), $this->input["_oldID"], $this->fields['id']);
-Infocom::cloneItem($this->getType(), $this->input["_oldID"], $this->fields['id']);
+         Infocom::cloneItem($this->getType(), $this->input["_oldID"], $this->fields['id']);
 		//test 0.84.3
-			Contract_Item::cloneItem($this->getType(), $this->input["_oldID"], $this->fields['id']);
+         Contract_Item::cloneItem($this->getType(), $this->input["_oldID"], $this->fields['id']);
          // ADD Contract
      //    $query = "SELECT `contracts_id`
               //     FROM `glpi_contracts_items`
