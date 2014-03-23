@@ -347,6 +347,10 @@ class PluginSimcardSimcard extends CommonDBTM {
       $tab[2]['massiveaction']   = false; // implicit field is id
       $tab[2]['injectable']      = false;
       
+      $tab[3]['checktype']       = 'text';
+      $tab[3]['displaytype']     = 'dropdown';
+      $tab[3]['injectable']      = true;
+      
       $tab[4]['table']           = 'glpi_plugin_simcard_simcardtypes';
       $tab[4]['field']           = 'name';
       $tab[4]['name']            = __('Type');
@@ -501,10 +505,6 @@ class PluginSimcardSimcard extends CommonDBTM {
       
       $tab[91]['injectable']      = false;
       $tab[93]['injectable']      = false;
-
-      $tab[3]['checktype']       = 'text';
-      $tab[3]['displaytype']     = 'dropdown';
-      $tab[3]['injectable']      = true;
 
       return $tab;
    }
