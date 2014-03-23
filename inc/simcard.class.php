@@ -397,6 +397,7 @@ class PluginSimcardSimcard extends CommonDBTM {
       $tab[19]['massiveaction']  = false;
       $tab[19]['injectable']      = false;
       
+      // TODO : This index has not any similar in GLPI, should find an other index
       $tab[23]['table']          = 'glpi_plugin_simcard_simcardvoltages';
       $tab[23]['field']          = 'name';
       $tab[23]['name']           = $LANG['plugin_simcard'][9];
@@ -479,7 +480,7 @@ class PluginSimcardSimcard extends CommonDBTM {
       $tab[31]['injectable']      = true;
       
       $tab[71]['table']           = 'glpi_groups';
-      $tab[71]['field']           = 'name';
+      $tab[71]['field']           = 'completename';
       $tab[71]['name']            = __('Group');
       $tab[71]['datatype']        = 'dropdown';
       $tab[71]['checktype']       = 'text';
