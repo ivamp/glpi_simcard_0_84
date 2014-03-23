@@ -486,6 +486,16 @@ class PluginSimcardSimcard extends CommonDBTM {
       $tab[49]['displaytype']     = 'dropdown';
       $tab[49]['injectable']      = true;
       
+      $tab[50]['table']           = 'glpi_groups';
+      $tab[50]['field']           = 'name';
+      $tab[50]['linkfield']       = 'groups_id_tech';
+      $tab[50]['condition']       = '`is_assign`';
+      $tab[50]['name']            = __('Group in charge of the hardware');
+      $tab[50]['datatype']        = 'dropdown';
+      $tab[50]['checktype']       = 'text';
+      $tab[50]['displaytype']     = 'dropdown';
+      $tab[50]['injectable']      = true;
+     
       $tab[70]['table']           = 'glpi_users';
       $tab[70]['field']           = 'name';
       $tab[70]['name']            = __('User');
