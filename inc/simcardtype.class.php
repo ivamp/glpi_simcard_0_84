@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: simcardsize.class.php 36 2012-08-31 13:59:28Z walid $
+ * @version $Id: simcardvoltage.class.php 36 2012-08-31 13:59:28Z walid $
  LICENSE
 
   This file is part of the simcard plugin.
@@ -33,16 +33,17 @@ if (!defined('GLPI_ROOT')) {
 }
 
 /// Class Vlan
-class PluginSimcardSimcardSize extends CommonDropdown {
+class PluginSimcardSimcardType extends CommonDropdown {
 
 
    static function getTypeName($nb=0) {
       global $LANG;
-      return $LANG['plugin_simcard'][6];
+      return $LANG['plugin_simcard'][11];
    }
 
    static function install(Migration $migration) {
       global $DB;
+      
       $table = getTableForItemType(__CLASS__);
       if (!TableExists($table)) {
          $query = "CREATE TABLE IF NOT EXISTS `$table` (
@@ -53,13 +54,6 @@ class PluginSimcardSimcardSize extends CommonDropdown {
            KEY `name` (`name`)
          ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
          $DB->query($query) or die ("Error adding table $table");
-         
-         $query = "INSERT INTO `$table` (`id`, `name`, `comment`) VALUES
-                     (1, 'Full-SIM', ''),
-                     (2, 'Micro-SIM', ''),
-                     (3, 'Mini-SIM', ''),
-                     (4, 'Nano-SIM', '');";
-         $DB->query($query) or die("Error adding simcard sizes");
       }
    }
    
@@ -71,6 +65,12 @@ class PluginSimcardSimcardSize extends CommonDropdown {
    static function upgrade(Migration $migration) {
       global $DB;
 
+         switch (plugin_simcard_currentVersion()) {
+      	    case '1.2':
+      	       self::install($migration);
+      	       break;
+
+      }
    }
    
    static function uninstall() {

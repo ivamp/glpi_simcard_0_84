@@ -116,6 +116,16 @@ class PluginSimcardSimcard_Item extends CommonDBRelation{
       }
    }
    
+   /**
+    * 
+    *
+    * @since 0.84+1.3
+    **/
+   static function upgrade(Migration $migration) {
+      global $DB;
+
+   }
+   
    static function uninstall() {
       global $DB;
       $table = getTableForItemType(__CLASS__);

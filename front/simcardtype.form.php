@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: en_GB.php 36 2012-08-31 13:59:28Z walid $
+ * @version $Id: simcardvoltage.form.php 36 2012-08-31 13:59:28Z walid $
  LICENSE
 
   This file is part of the simcard plugin.
@@ -28,18 +28,9 @@
  @since     2009
  ---------------------------------------------------------------------- */
 
-$LANG['plugin_simcard']['title'][1] = "Sim cards management";
-$LANG['plugin_simcard'][1] = "Phone number";
-$LANG['plugin_simcard'][2] = "PUK2";
-$LANG['plugin_simcard'][3] = "Pin 1";
-$LANG['plugin_simcard'][4] = "Puk";
-$LANG['plugin_simcard'][5] = "Pin 2";
-$LANG['plugin_simcard'][6] = "Size";
-$LANG['plugin_simcard'][7] = "Provider";
-$LANG['plugin_simcard'][8] = "IMSI";
-$LANG['plugin_simcard'][9] = "Voltage";
-$LANG['plugin_simcard'][10] = "New SIM card";
-$LANG['plugin_simcard'][11] = "Types of SIM card";
+define('GLPI_ROOT', '../../..');
+include (GLPI_ROOT . "/inc/includes.php");
 
-$LANG['plugin_simcard']['profile'][0] = "Right Manager";
-$LANG['plugin_simcard']['profile'][1] = "Sim cards";
+$dropdown = new PluginSimcardSimcardType();
+include (GLPI_ROOT . "/front/dropdown.common.form.php");
+?>
