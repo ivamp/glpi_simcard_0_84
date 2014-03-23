@@ -478,23 +478,23 @@ class PluginSimcardSimcard extends CommonDBTM {
       $tab[31]['displaytype']     = 'dropdown';
       $tab[31]['injectable']      = true;
       
+      $tab[71]['table']           = 'glpi_groups';
+      $tab[71]['field']           = 'name';
+      $tab[71]['name']            = __('Group');
+      $tab[71]['datatype']        = 'dropdown';
+      $tab[71]['checktype']       = 'text';
+      $tab[71]['displaytype']     = 'dropdown';
+      $tab[71]['injectable']      = true;
+      
       $tab[49]['table']           = 'glpi_groups';
       $tab[49]['field']           = 'name';
-      $tab[49]['name']            = __('Group');
+      $tab[49]['linkfield']       = 'groups_id_tech';
+      $tab[49]['condition']       = '`is_assign`';
+      $tab[49]['name']            = __('Group in charge of the hardware');
       $tab[49]['datatype']        = 'dropdown';
       $tab[49]['checktype']       = 'text';
       $tab[49]['displaytype']     = 'dropdown';
       $tab[49]['injectable']      = true;
-      
-      $tab[50]['table']           = 'glpi_groups';
-      $tab[50]['field']           = 'name';
-      $tab[50]['linkfield']       = 'groups_id_tech';
-      $tab[50]['condition']       = '`is_assign`';
-      $tab[50]['name']            = __('Group in charge of the hardware');
-      $tab[50]['datatype']        = 'dropdown';
-      $tab[50]['checktype']       = 'text';
-      $tab[50]['displaytype']     = 'dropdown';
-      $tab[50]['injectable']      = true;
      
       $tab[70]['table']           = 'glpi_users';
       $tab[70]['field']           = 'name';
