@@ -387,6 +387,13 @@ class PluginSimcardSimcard extends CommonDBTM {
       $tab[19]['massiveaction']  = false;
       $tab[19]['injectable']      = false;
       
+      $tab[23]['table']          = 'glpi_plugin_simcard_simcardvoltages';
+      $tab[23]['field']          = 'name';
+      $tab[23]['name']           = $LANG['plugin_simcard'][9];
+      $tab[23]['datatype']       = 'dropdown';
+      $tab[23]['checktype']      = 'text';
+      $tab[23]['injectable']      = true;
+      
       $tab[24]['table']          = 'glpi_users';
       $tab[24]['field']          = 'name';
       $tab[24]['linkfield']      = 'users_id_tech';
@@ -396,13 +403,6 @@ class PluginSimcardSimcard extends CommonDBTM {
       $tab[24]['checktype']      = 'text';
       $tab[24]['injectable']      = true;
 
-      $tab[23]['table']          = 'glpi_plugin_simcard_simcardvoltages';
-      $tab[23]['field']          = 'name';
-      $tab[23]['name']           = $LANG['plugin_simcard'][9];
-      $tab[23]['datatype']       = 'dropdown';
-      $tab[23]['checktype']      = 'text';
-      $tab[23]['injectable']      = true;
-      
       $tab[25]['table']          = 'glpi_plugin_simcard_simcardsizes';
       $tab[25]['field']          = 'name';
       $tab[25]['name']           = $LANG['plugin_simcard'][6];
