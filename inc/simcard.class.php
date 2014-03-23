@@ -347,16 +347,15 @@ class PluginSimcardSimcard extends CommonDBTM {
       $tab[2]['massiveaction']   = false; // implicit field is id
       $tab[2]['injectable']      = false;
       
-      $tab[3]['checktype']       = 'text';
-      $tab[3]['displaytype']     = 'dropdown';
-      $tab[3]['injectable']      = true;
-      
       $tab[4]['table']           = 'glpi_plugin_simcard_simcardtypes';
       $tab[4]['field']           = 'name';
       $tab[4]['name']            = __('Type');
       $tab[4]['datatype']        = 'dropdown';
       $tab[4]['massiveaction']   = true;
-
+      $tab[4]['checktype']       = 'text';
+      $tab[4]['displaytype']     = 'dropdown';
+      $tab[4]['injectable']      = true;
+      
       $tab[5]['table']           = $this->getTable();
       $tab[5]['field']           = 'serial';
       $tab[5]['name']            = $LANG['plugin_simcard'][8];
@@ -383,6 +382,13 @@ class PluginSimcardSimcard extends CommonDBTM {
       $tab[16]['injectable']      = true;
       
       $tab += Location::getSearchOptionsToAdd();
+
+      $tab[3]['checktype']       = 'text';
+      $tab[3]['displaytype']     = 'dropdown';
+      $tab[3]['injectable']      = true;
+      
+      $tab[91]['injectable']      = false;
+      $tab[93]['injectable']      = false;
 
       $tab[19]['table']          = $this->getTable();
       $tab[19]['field']          = 'date_mod';
@@ -496,16 +502,13 @@ class PluginSimcardSimcard extends CommonDBTM {
       
       $tab[90]['table']          = $this->getTable();
       $tab[90]['field']          = 'notepad';
-      $tab[90]['name']           = __('title');
+      $tab[90]['name']           = __('Notes');
       $tab[90]['massiveaction']  = false;
       $tab[90]['linkfield']      = 'notepad';
       $tab[90]['checktype']       = 'text';
       $tab[90]['displaytype']     = 'multiline_text';
       $tab[90]['injectable']      = true;
       
-      $tab[91]['injectable']      = false;
-      $tab[93]['injectable']      = false;
-
       return $tab;
    }
    
