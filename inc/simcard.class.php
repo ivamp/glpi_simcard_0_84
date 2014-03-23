@@ -33,7 +33,6 @@ if (!defined('GLPI_ROOT')) {
 }
 
 /// Class Simcard
-//class PluginSimcardSimcard extends CommonDBTM {
 class PluginSimcardSimcard extends CommonDBTM {
 
    // From CommonDBTM

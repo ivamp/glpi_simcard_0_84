@@ -32,9 +32,8 @@ if (!defined('GLPI_ROOT')) {
    die("Sorry. You can't access directly to this file");
 }
 
-// Relation between Computer and Items (monitor, printer, phone, peripheral only)
+// Relation between Simcard and Items (computer, phone, peripheral only)
 class PluginSimcardSimcard_Item extends CommonDBRelation{
-//class PluginSimcardSimcard_Item extends CommonDBTM{
 
    // From CommonDBRelation
    static public $itemtype_1 = 'PluginSimcardSimcard';
