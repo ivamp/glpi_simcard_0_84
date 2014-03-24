@@ -109,8 +109,7 @@ function plugin_init_simcard() {
 function plugin_version_simcard() {
    global $LANG;
 
-   $author = "El Sendero  <a href='http://www.elsendero.es'>";
-   $author.= "<img src='".GLPI_ROOT."/plugins/simcard/pics/favicon.ico'></a>";
+   $author = "<a href='http://www.elsendero.es'>El Sendero</a>";
    $author.= ", <a href='www.teclib.com'>Walid Nouh</a>";
    return array ('name'           => $LANG['plugin_simcard']['title'][1],
                    'version'        => PLUGIN_SIMCARD_VERSION,
