@@ -238,7 +238,6 @@ function plugin_item_purge_simcard($item) {
 function plugin_datainjection_populate_simcard() {
    global $INJECTABLE_TYPES;
    
-   $INJECTABLE_TYPES['PluginSimcardSimcardTypeInjection']  = 'simcard';
    $INJECTABLE_TYPES['PluginSimcardSimcardInjection']      = 'simcard';
 }
 
