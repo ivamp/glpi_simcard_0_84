@@ -402,7 +402,8 @@ class PluginSimcardSimcard extends CommonDBTM {
       $tab[23]['name']           = $LANG['plugin_simcard'][9];
       $tab[23]['datatype']       = 'dropdown';
       $tab[23]['checktype']      = 'text';
-      $tab[23]['injectable']      = true;
+      $tab[23]['displaytype']    = 'text';
+      $tab[23]['injectable']     = true;
       
       $tab[24]['table']          = 'glpi_users';
       $tab[24]['field']          = 'name';
@@ -411,6 +412,7 @@ class PluginSimcardSimcard extends CommonDBTM {
       $tab[24]['datatype']       = 'dropdown';
       $tab[24]['right']          = 'own_ticket';
       $tab[24]['checktype']      = 'text';
+      $tab[24]['displaytype']    = 'dropdown';
       $tab[24]['injectable']      = true;
 
       $tab[25]['table']          = 'glpi_plugin_simcard_simcardsizes';
@@ -418,6 +420,7 @@ class PluginSimcardSimcard extends CommonDBTM {
       $tab[25]['name']           = $LANG['plugin_simcard'][6];
       $tab[25]['datatype']       = 'dropdown';
       $tab[25]['checktype']      = 'text';
+      $tab[25]['displaytype']    = 'dropdown';
       $tab[25]['injectable']      = true;
       
       $tab[26]['table']          = 'glpi_plugin_simcard_phoneoperators';
@@ -502,7 +505,7 @@ class PluginSimcardSimcard extends CommonDBTM {
       $tab[70]['datatype']        = 'dropdown';
       $tab[70]['right']           = 'all';
       $tab[70]['checktype']       = 'text';
-      $tab[70]['displaytype']     = 'user';
+      $tab[70]['displaytype']     = 'dropdown';
       $tab[70]['injectable']      = true;
       
       $tab[80]['table']          = 'glpi_entities';
