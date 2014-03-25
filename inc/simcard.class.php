@@ -402,7 +402,7 @@ class PluginSimcardSimcard extends CommonDBTM {
       $tab[23]['name']           = $LANG['plugin_simcard'][9];
       $tab[23]['datatype']       = 'dropdown';
       $tab[23]['checktype']      = 'text';
-      $tab[23]['displaytype']    = 'text';
+      $tab[23]['displaytype']    = 'dropdown';
       $tab[23]['injectable']     = true;
       
       $tab[24]['table']          = 'glpi_users';
