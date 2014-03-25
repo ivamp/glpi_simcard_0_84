@@ -378,7 +378,7 @@ class PluginSimcardSimcard extends CommonDBTM {
       $tab[16]['linkfield']      = 'comment';
       $tab[16]['checktype']      = 'text';
       $tab[16]['displaytype']    = 'multiline_text';
-      $tab[16]['injectable']      = true;
+      $tab[16]['injectable']     = true;
       
       $tab += Location::getSearchOptionsToAdd();
 
@@ -386,15 +386,15 @@ class PluginSimcardSimcard extends CommonDBTM {
       $tab[3]['displaytype']     = 'dropdown';
       $tab[3]['injectable']      = true;
       
-      $tab[91]['injectable']      = false;
-      $tab[93]['injectable']      = false;
+      $tab[91]['injectable']     = false;
+      $tab[93]['injectable']     = false;
 
       $tab[19]['table']          = $this->getTable();
       $tab[19]['field']          = 'date_mod';
       $tab[19]['name']           = __('Last update');
       $tab[19]['datatype']       = 'datetime';
       $tab[19]['massiveaction']  = false;
-      $tab[19]['injectable']      = false;
+      $tab[19]['injectable']     = false;
       
       // TODO : This index has not any similar in GLPI, should find an other index
       $tab[23]['table']          = 'glpi_plugin_simcard_simcardvoltages';
@@ -413,7 +413,7 @@ class PluginSimcardSimcard extends CommonDBTM {
       $tab[24]['right']          = 'own_ticket';
       $tab[24]['checktype']      = 'text';
       $tab[24]['displaytype']    = 'dropdown';
-      $tab[24]['injectable']      = true;
+      $tab[24]['injectable']     = true;
 
       $tab[25]['table']          = 'glpi_plugin_simcard_simcardsizes';
       $tab[25]['field']          = 'name';
@@ -421,7 +421,7 @@ class PluginSimcardSimcard extends CommonDBTM {
       $tab[25]['datatype']       = 'dropdown';
       $tab[25]['checktype']      = 'text';
       $tab[25]['displaytype']    = 'dropdown';
-      $tab[25]['injectable']      = true;
+      $tab[25]['injectable']     = true;
       
       $tab[26]['table']          = 'glpi_plugin_simcard_phoneoperators';
       $tab[26]['field']          = 'name';
@@ -429,84 +429,84 @@ class PluginSimcardSimcard extends CommonDBTM {
       $tab[26]['datatype']       = 'dropdown';
       $tab[26]['checktype']      = 'text';
       $tab[26]['displaytype']    = 'dropdown';
-      $tab[26]['injectable']      = true;
+      $tab[26]['injectable']     = true;
       
       $tab[27]['table']          = $this->getTable();
       $tab[27]['field']          = 'phonenumber';
       $tab[27]['name']           = $LANG['plugin_simcard'][1];
-      $tab[27]['datatype']        = 'string';
-      $tab[27]['checktype']       = 'text';
-      $tab[27]['displaytype']     = 'text';
-      $tab[27]['injectable']      = true;
+      $tab[27]['datatype']       = 'string';
+      $tab[27]['checktype']      = 'text';
+      $tab[27]['displaytype']    = 'text';
+      $tab[27]['injectable']     = true;
       
       if (Session::haveRight('simcard', 'w')) {
-         $tab[28]['table']          = $this->getTable();
-         $tab[28]['field']          = 'pin';
-         $tab[28]['name']           = $LANG['plugin_simcard'][3];
-         $tab[28]['datatype']        = 'string';
-         $tab[28]['checktype']       = 'text';
-         $tab[28]['displaytype']     = 'text';
-         $tab[28]['injectable']      = true;
+         $tab[28]['table']       = $this->getTable();
+         $tab[28]['field']       = 'pin';
+         $tab[28]['name']        = $LANG['plugin_simcard'][3];
+         $tab[28]['datatype']    = 'string';
+         $tab[28]['checktype']   = 'text';
+         $tab[28]['displaytype'] = 'text';
+         $tab[28]['injectable']  = true;
          
-         $tab[29]['table']          = $this->getTable();
-         $tab[29]['field']          = 'puk';
-         $tab[29]['name']           = $LANG['plugin_simcard'][4];
-         $tab[29]['datatype']        = 'string';
-         $tab[29]['checktype']       = 'text';
-         $tab[29]['displaytype']     = 'text';
-         $tab[29]['injectable']      = true;
+         $tab[29]['table']       = $this->getTable();
+         $tab[29]['field']       = 'puk';
+         $tab[29]['name']        = $LANG['plugin_simcard'][4];
+         $tab[29]['datatype']    = 'string';
+         $tab[29]['checktype']   = 'text';
+         $tab[29]['displaytype'] = 'text';
+         $tab[29]['injectable']  = true;
 
-         $tab[30]['table']          = $this->getTable();
-         $tab[30]['field']          = 'pin2';
-         $tab[30]['name']           = $LANG['plugin_simcard'][5];
-         $tab[30]['datatype']        = 'string';
-         $tab[30]['checktype']       = 'text';
-         $tab[30]['displaytype']     = 'text';
-         $tab[30]['injectable']      = true;
+         $tab[30]['table']       = $this->getTable();
+         $tab[30]['field']       = 'pin2';
+         $tab[30]['name']        = $LANG['plugin_simcard'][5];
+         $tab[30]['datatype']    = 'string';
+         $tab[30]['checktype']   = 'text';
+         $tab[30]['displaytype'] = 'text';
+         $tab[30]['injectable']  = true;
          
-         $tab[32]['table']          = $this->getTable();
-         $tab[32]['field']          = 'puk2';
-         $tab[32]['name']           = $LANG['plugin_simcard'][2];
-         $tab[32]['datatype']        = 'string';
-         $tab[32]['checktype']       = 'text';
-         $tab[32]['displaytype']     = 'text';
-         $tab[32]['injectable']      = true;
+         $tab[32]['table']       = $this->getTable();
+         $tab[32]['field']       = 'puk2';
+         $tab[32]['name']        = $LANG['plugin_simcard'][2];
+         $tab[32]['datatype']    = 'string';
+         $tab[32]['checktype']   = 'text';
+         $tab[32]['displaytype'] = 'text';
+         $tab[32]['injectable']  = true;
       }
 
-      $tab[31]['table']           = 'glpi_states';
-      $tab[31]['field']           = 'name';
-      $tab[31]['name']            = __('Statut');
-      $tab[31]['datatype']        = 'dropdown';
-      $tab[31]['checktype']       = 'text';
-      $tab[31]['displaytype']     = 'dropdown';
-      $tab[31]['injectable']      = true;
+      $tab[31]['table']          = 'glpi_states';
+      $tab[31]['field']          = 'name';
+      $tab[31]['name']           = __('Statut');
+      $tab[31]['datatype']       = 'dropdown';
+      $tab[31]['checktype']      = 'text';
+      $tab[31]['displaytype']    = 'dropdown';
+      $tab[31]['injectable']     = true;
       
-      $tab[71]['table']           = 'glpi_groups';
-      $tab[71]['field']           = 'completename';
-      $tab[71]['name']            = __('Group');
-      $tab[71]['datatype']        = 'dropdown';
-      $tab[71]['checktype']       = 'text';
-      $tab[71]['displaytype']     = 'dropdown';
-      $tab[71]['injectable']      = true;
+      $tab[71]['table']          = 'glpi_groups';
+      $tab[71]['field']          = 'completename';
+      $tab[71]['name']           = __('Group');
+      $tab[71]['datatype']       = 'dropdown';
+      $tab[71]['checktype']      = 'text';
+      $tab[71]['displaytype']    = 'dropdown';
+      $tab[71]['injectable']     = true;
       
-      $tab[49]['table']           = 'glpi_groups';
-      $tab[49]['field']           = 'name';
-      $tab[49]['linkfield']       = 'groups_id_tech';
-      $tab[49]['condition']       = '`is_assign`';
-      $tab[49]['name']            = __('Group in charge of the hardware');
-      $tab[49]['datatype']        = 'dropdown';
-      $tab[49]['checktype']       = 'text';
-      $tab[49]['displaytype']     = 'dropdown';
-      $tab[49]['injectable']      = true;
+      $tab[49]['table']          = 'glpi_groups';
+      $tab[49]['field']          = 'name';
+      $tab[49]['linkfield']      = 'groups_id_tech';
+      $tab[49]['condition']      = '`is_assign`';
+      $tab[49]['name']           = __('Group in charge of the hardware');
+      $tab[49]['datatype']       = 'dropdown';
+      $tab[49]['checktype']      = 'text';
+      $tab[49]['displaytype']    = 'dropdown';
+      $tab[49]['injectable']     = true;
      
-      $tab[70]['table']           = 'glpi_users';
-      $tab[70]['field']           = 'name';
-      $tab[70]['name']            = __('User');
-      $tab[70]['datatype']        = 'dropdown';
-      $tab[70]['right']           = 'all';
-      $tab[70]['checktype']       = 'text';
-      $tab[70]['displaytype']     = 'dropdown';
-      $tab[70]['injectable']      = true;
+      $tab[70]['table']          = 'glpi_users';
+      $tab[70]['field']          = 'name';
+      $tab[70]['name']           = __('User');
+      $tab[70]['datatype']       = 'dropdown';
+      $tab[70]['right']          = 'all';
+      $tab[70]['checktype']      = 'text';
+      $tab[70]['displaytype']    = 'dropdown';
+      $tab[70]['injectable']     = true;
       
       $tab[80]['table']          = 'glpi_entities';
       $tab[80]['field']          = 'completename';
@@ -518,9 +518,9 @@ class PluginSimcardSimcard extends CommonDBTM {
       $tab[90]['name']           = __('Notes');
       $tab[90]['massiveaction']  = false;
       $tab[90]['linkfield']      = 'notepad';
-      $tab[90]['checktype']       = 'text';
-      $tab[90]['displaytype']     = 'multiline_text';
-      $tab[90]['injectable']      = true;
+      $tab[90]['checktype']      = 'text';
+      $tab[90]['displaytype']    = 'multiline_text';
+      $tab[90]['injectable']     = true;
       
       return $tab;
    }
