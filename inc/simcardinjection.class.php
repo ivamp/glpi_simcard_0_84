@@ -32,7 +32,7 @@ if (!defined('GLPI_ROOT')){
    die("Sorry. You can't access directly to this file");
 }
 
-/// Computer class
+/// class SimcardInjection
 class PluginSimcardSimcardInjection extends PluginSimcardSimcard
    implements PluginDatainjectionInjectionInterface {
 
@@ -51,6 +51,11 @@ class PluginSimcardSimcardInjection extends PluginSimcardSimcard
       return array();
    }
 
+
+   static function getTable() {
+      $parenttype = get_parent_class();
+      return $parenttype::getTable();
+   }
 
    function getOptions($primary_type = '') {
       return Search::getOptions(get_parent_class($this));

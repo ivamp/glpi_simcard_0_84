@@ -32,7 +32,7 @@ if (!defined('GLPI_ROOT')) {
    die("Sorry. You can't access directly to this file");
 }
 
-/// Class Vlan
+/// Class SimcardType
 class PluginSimcardSimcardType extends CommonDropdown {
 
 
